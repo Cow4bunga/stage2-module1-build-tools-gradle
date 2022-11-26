@@ -4,8 +4,8 @@ import static org.apache.commons.lang3.math.NumberUtils.isCreatable;
 
 public class StringUtils {
     public static boolean isPositiveNumber(String str) {
-        if (str == null)
+        if (str == null || !isCreatable(str))
             return false;
-        return isCreatable(str);
+        return Integer.parseInt(str) > 0;
     }
 }
